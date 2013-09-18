@@ -15,10 +15,10 @@ def index(request):
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
-			first_name = request.POST.get('first_name', '')
-			last_name = request.POST.get('last_name', '')
-			email = request.POST.get('email', '')
-			users_obj = Users(user_first_name=first_name, user_last_name=last_name, email_address=email)
+			user_first_name = request.POST.get('user_first_name', '')
+			user_last_name = request.POST.get('user_last_name', '')
+			email_address = request.POST.get('email_address', '')
+			users_obj = Users(user_first_name=user_first_name, user_last_name=user_last_name, email_address=email_address)
 			users_obj.save()
 			return HttpResponseRedirect('/')
 	else:
