@@ -11,6 +11,7 @@ from manage_users.models import Users, UserForm
 	#return render(request, 'home.html', context)
 
 def index(request):
+	users_list = Users.objects.order_by('-user_last_name')
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
@@ -18,11 +19,12 @@ def index(request):
 			last_name = request.POST.get('last_name', '')
 			email = request.POST.get('email', '')
 			users_obj = Users(user_first_name=first_name, user_last_name=last_name, email_address=email)
+			users_obj.save()
 			return HttpResponseRedirect('/')
 	else:
 		form = UserForm()
 	return render(request, 'home.html', {
-		'form': form,
+		'form': form, 'users_list': users_list
 		})
 
 
