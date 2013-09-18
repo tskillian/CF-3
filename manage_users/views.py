@@ -16,7 +16,8 @@ def index(request):
 	users_list = Users.objects.all()
 	if request.method == 'POST':
 		form = UserForm(request.POST)
-		form.save()
+		if form.is_valid():
+			form.save()
 		#if form.is_valid():
 			#user_first_name = request.POST.get('user_first_name', '')
 			#user_last_name = request.POST.get('user_last_name', '')
@@ -24,7 +25,7 @@ def index(request):
 			#users_obj = Users(user_first_name=user_first_name, user_last_name=user_last_name, email_address=email_address)
 			#users_obj.save()
 		#UserForm().save()
-		return HttpResponseRedirect('/')
+			return HttpResponseRedirect('/')
 	else:
 		form = UserForm()
 	return render(request, 'home.html', {
