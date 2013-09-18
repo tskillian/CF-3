@@ -11,7 +11,7 @@ from manage_users.models import Users, UserForm
 	#return render(request, 'home.html', context)
 
 def index(request):
-	if request.method == 'POST'
+	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
 			first_name = request.POST.get('first_name', '')
