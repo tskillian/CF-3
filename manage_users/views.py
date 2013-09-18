@@ -11,7 +11,7 @@ from manage_users.models import Users, UserForm
 	#return render(request, 'home.html', context)
 
 def index(request):
-	users_list = Users.object.all()
+	users_list = Users.objects.all()
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
