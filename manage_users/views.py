@@ -17,11 +17,12 @@ def index(request):
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
-			user_first_name = request.POST.get('user_first_name', '')
-			user_last_name = request.POST.get('user_last_name', '')
-			email_address = request.POST.get('email_address', '')
-			users_obj = Users(user_first_name=user_first_name, user_last_name=user_last_name, email_address=email_address)
-			users_obj.save()
+			#user_first_name = request.POST.get('user_first_name', '')
+			#user_last_name = request.POST.get('user_last_name', '')
+			#email_address = request.POST.get('email_address', '')
+			#users_obj = Users(user_first_name=user_first_name, user_last_name=user_last_name, email_address=email_address)
+			#users_obj.save()
+			form.save()
 			return HttpResponseRedirect('/')
 	else:
 		form = UserForm()
