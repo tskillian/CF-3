@@ -15,7 +15,8 @@ def index(request):
 	#test.save()
 	users_list = Users.objects.all()
 	if request.method == 'POST':
-		form = UserForm(request.POST)
+		#form = UserForm(request.POST)
+		form = UserForm()
 		if form.is_valid():
 			form.save()
 		#if form.is_valid():
