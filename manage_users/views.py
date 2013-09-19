@@ -14,7 +14,7 @@ def index(request):
 		emails.append(i.email_address)
 
 	current_users = []
-	for i in len(first_names):
+	for i in range(len(first_names)):
 		current_users.append(" ".join([first_names[i], last_names[i], emails[i]]))
 
 	index = len(first_names)-1
