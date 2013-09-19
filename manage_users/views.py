@@ -5,7 +5,9 @@ from django.http import HttpResponseRedirect
 from manage_users.models import Users, UserForm
 
 def index(request):
-	users_list = Users.objects.filter(user_first_name__startswith="test")
+	users_list = []
+	for i in Users.objects.all()
+		users_list.append(i.user_first_name)
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
