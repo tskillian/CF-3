@@ -4,35 +4,12 @@ from django.http import HttpResponseRedirect
 
 from manage_users.models import Users, UserForm
 
-
-#def index(request):
-	#users_list = Users.objects.order_by('-user_last_name')
-	#context = {'users_list': users_list}
-	#return render(request, 'home.html', context)
-
 def index(request):
-	#test = Users(user_first_name='first test', user_last_name='first test', email_address='first test')
-	#test.save()
-	users_list = Users.objects.all()
+	users_list = Users.objects.filter(user_first_name__startswith="test")
 	if request.method == 'POST':
 		form = UserForm(request.POST)
-		#form = UserForm()
 		if form.is_valid():
-			#form.save()
-		#if form.is_valid():
-			#user_first_name = request.POST.get('user_first_name', '')
-			#user_last_name = request.POST.get('user_last_name', '')
-			#email_address = request.POST.get('email_address', '')
-			#users_obj = Users(user_first_name=user_first_name, user_last_name=user_last_name, email_address=email_address)
-			#users_obj.save()
-		#UserForm().save()
-			#user_first_name = form.cleaned_data.get('user_first_name', '')
-			#user_last_name = form.cleaned_data.get('user_last_name', '')
-			#email_address = form.cleaned_data.get('email_address', '')
-			#users_obj = Users(user_first_name=user_first_name, user_last_name=user_last_name, email_address=email_address)
-			#users_obj.save()
 			users_obj = form.save()
-
 			return HttpResponseRedirect('/')
 	else:
 		form = UserForm()
