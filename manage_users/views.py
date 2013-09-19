@@ -15,7 +15,7 @@ def index(request):
 
 	current_users = []
 	for i in range(len(first_names)):
-		current_users.append(first_names[i] + last_names[i] + ' - ' + emails[i])
+		current_users.append(first_names[i] + " " + last_names[i] + ' - ' + emails[i])
 
 	index = len(first_names)-1
 
@@ -27,9 +27,7 @@ def index(request):
 	else:
 		form = UserForm()
 	return render(request, 'home.html', {
-		'form': form, 'first_names': first_names,
-		'last_names': last_names, 'emails': emails,
-		'index': index, 'current_users': current_users
+		'form': form, 'current_users': current_users
 		})
 
 
