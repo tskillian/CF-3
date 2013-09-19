@@ -13,6 +13,8 @@ def index(request):
 		last_names.append(i.user_last_name)
 		emails.append(i.email_address)
 
+	index = len(first_names)-1
+
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
@@ -21,7 +23,9 @@ def index(request):
 	else:
 		form = UserForm()
 	return render(request, 'home.html', {
-		'form': form, 'first_names': first_names
+		'form': form, 'first_names': first_names,
+		'last_names': last_names, 'emails': emails,
+		'index': index
 		})
 
 
