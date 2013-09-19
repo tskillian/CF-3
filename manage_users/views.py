@@ -15,8 +15,8 @@ def index(request):
 	#test.save()
 	users_list = Users.objects.all()
 	if request.method == 'POST':
-		#form = UserForm(request.POST)
-		form = UserForm()
+		form = UserForm(request.POST)
+		#form = UserForm()
 		if form.is_valid():
 			f#orm.save()
 		#if form.is_valid():
@@ -27,7 +27,7 @@ def index(request):
 			#users_obj.save()
 		#UserForm().save()
 			user_first_name = form.cleaned_data.get('user_first_name', '')
-            user_last_name = form.cleaned_data.get('user_last_name', '')
+        	user_last_name = form.cleaned_data.get('user_last_name', '')
             email_address = form.cleaned_data.get('email_address', '')
             users_obj = Users(user_first_name=user_first_name,
                     user_last_name=user_last_name, 
