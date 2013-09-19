@@ -13,6 +13,10 @@ def index(request):
 		last_names.append(i.user_last_name)
 		emails.append(i.email_address)
 
+	current_users = []
+	for i in len(first_names):
+		current_users.append(" ".join([first_names[i], last_names[i], emails[i][]))
+
 	index = len(first_names)-1
 
 	if request.method == 'POST':
@@ -25,7 +29,7 @@ def index(request):
 	return render(request, 'home.html', {
 		'form': form, 'first_names': first_names,
 		'last_names': last_names, 'emails': emails,
-		'index': index
+		'index': index, 'current_users': current_users
 		})
 
 

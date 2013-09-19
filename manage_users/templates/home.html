@@ -15,8 +15,8 @@
 		{% if first_names %}
 			<div><strong>Current Users</strong></div>
 			<ul>
-				{% for name in first_names %}
-					<li>{{ name }}</li>
+				{% for user in current_users %}
+					<li>{{ user }}</li>
 				{% endfor %}
 			</ul>
 		{% else %}
