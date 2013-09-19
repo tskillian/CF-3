@@ -12,10 +12,11 @@
         	<button id ="add" type="submit">Submit</button>
         </form>
 
-		{% if users_list %}
+		{% if first_names %}
+			<div><strong>Current Users</strong></div>
 			<ul>
-				{% for user in users_list %}
-					<li>{{ user }}</li>
+				{% for element in first_names %}
+					<li>{{ element }}</li>
 				{% endfor %}
 			</ul>
 		{% else %}

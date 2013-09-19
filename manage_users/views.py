@@ -5,9 +5,14 @@ from django.http import HttpResponseRedirect
 from manage_users.models import Users, UserForm
 
 def index(request):
-	users_list = []
+	first_names = []
+	last_names = []
+	emails = []
 	for i in Users.objects.all():
-		users_list.append(i.user_first_name)
+		first_names.append(i.user_first_name)
+		last_names.append(i.user_last_name)
+		emails.append(i.email_address)
+
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
@@ -16,7 +21,7 @@ def index(request):
 	else:
 		form = UserForm()
 	return render(request, 'home.html', {
-		'form': form, 'users_list': users_list
+		'form': form, 'first_names': first_names
 		})
 
 
