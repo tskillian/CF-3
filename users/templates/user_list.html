@@ -1,7 +1,7 @@
 <h1>Current Users</h1>
 <ul>
 	{% for user in object_list %}
-	<li>{{ user.first_name }} {{ user.last_name }}, {{ user.email}} 
+	<li>{{ user.first_name }} {{ user.last_name }}, {{ user.email}} :
 		<a href="{% url "user_edit" user.id %}">edit</a>
 		<a href="{% url "user_delete" user.id %}">delete</a>
 	</li>

@@ -1,8 +1,8 @@
 <h1>Current Users</h1>
 <ul>
 	{% for user in object_list %}
-	<li>{{ user.last_name }} :
-		<a href="{% url "user_edit" user.id %}">{{ user.email }}</a>
+	<li>{{ user.first_name }} {{ user.last_name }}, {{ user.email}} :
+		<a href="{% url "user_edit" user.id %}">edit</a>
 		<a href="{% url "user_delete" user.id %}">delete</a>
 	</li>
 	{% endfor %}
