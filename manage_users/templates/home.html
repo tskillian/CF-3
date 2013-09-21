@@ -13,14 +13,27 @@
         </form>
 
 		{% if current_users %}
-			<div><strong>Current Users</strong></div>
-			<ul>
-				{% for user in current_users %}
-					<li>{{ user }}</li>
+
+		<table border="1px">
+			<thead>
+				<tr>
+					<th colspan="3">Current Users</th>
+				</tr>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for first, last, email in current_users %}
+					<tr>
+						<td>{{ first }}</td>
+						<td>{{ last }}</td>
+						<td>{{ email }}</td>
+					</tr>
 				{% endfor %}
-			</ul>
-		{% else %}
-			<p>No users are currently in the system</p>
-		{% endif %}
+			</tbody>
+		</table>
 	</body>
 </html>
