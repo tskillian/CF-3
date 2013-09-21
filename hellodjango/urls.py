@@ -7,7 +7,8 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', include('manage_users.urls')),
-    url(r'^index/', include('manage_users.urls'))
+    url(r'^index/', include('manage_users.urls')),
+    url(r'^users/', include('users.urls'))
     # url(r'^hellodjango/', include('hellodjango.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
