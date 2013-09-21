@@ -1,4 +1,4 @@
 <form method="post"> {% csrf_token %}
-	Are you sure you want to delete "{{ object.last_name }}" ?
+	Are you sure you want to delete {{ object.first_name }} {{ object.last_name }} from the user list?
 	<input type="submit" value="Submit" />
 </form>
