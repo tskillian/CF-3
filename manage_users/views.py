@@ -15,7 +15,7 @@ def index(request):
 
 	current_users = []
 	for i in range(len(first_names)):
-		current_users.append((first_names[i], last_names[i],emails[i])
+		current_users.append((first_names[i], last_names[i],emails[i]))
 
 	if request.method == 'POST':
 		form = UserForm(request.POST)
