@@ -3,6 +3,6 @@ $(document).ready(function () {
 		$(this).css("background","AliceBlue");
 	},
 		function () {
-			$(this).css("background","");
+			$(this).css("background","white");
 		})
 });
