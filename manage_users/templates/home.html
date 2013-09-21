@@ -2,15 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 		<title>
 			Manage Users
 		</title>
 	</head>
 	<body>
+		<h1>Enter User Information:</h1>
 		<form action="" method="post"> {% csrf_token %}
     		{{ form.as_p}}
         	<button id ="add" type="submit">Submit</button>
         </form>
+        <br>
 
 		{% if current_users %}
 
