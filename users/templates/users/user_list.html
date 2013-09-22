@@ -17,9 +17,10 @@
 </ul>
 
 <a href="{% url "user_new" %}">Add User</a>
+<button id ="shake" type="button">Earth Quake!</button>
 <script>
-$(document).click(function() {
-	$('ul li').toggle("shake");
+$('#shake').click(function() {
+	$('body').effect("shake");
 });
 </script>
 </body>
