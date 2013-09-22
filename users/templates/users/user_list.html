@@ -2,25 +2,37 @@
 <html lang="en">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/jquery.spritely.js"></script>
+<link re1="stylesheet" type="text/css" href="/static/styles.css">
+
 <head>
 	<title>Manage Users</title>
 </head>
 <body>
-<h1>Current Users</h1>
-<ul>
-	{% for user in object_list %}
-	<li>{{ user.first_name }} {{ user.last_name }} ({{ user.email}})
-		<a href="{% url "user_edit" user.id %}">edit</a>
-		<a href="{% url "user_delete" user.id %}">delete</a>
-	</li>
-	{% endfor %}
-</ul>
+	<div class="container">
+		<div id="far-clouds" class="far-clouds stage"></div>
+		<div id="near-clouds" class="near-clouds stage"></div>
+		<div class="mainContent">
+			<h1>Current Users</h1>
+				<ul>
+				{% for user in object_list %}
+					<li>{{ user.first_name }} {{ user.last_name }} ({{ user.email}})
+					<a href="{% url "user_edit" user.id %}">edit</a>
+					<a href="{% url "user_delete" user.id %}">delete</a>
+					</li>
+				{% endfor %}
+				</ul>
 
-<form action="{% url "user_new" %}" method="get">
-	<input type="submit" value="Add User" name="add_user" id="add_user" />
-
-<button id ="shake" type="button">Earth Quake!</button>
+			<form action="{% url "user_new" %}" method="get">
+			<input type="submit" value="Add User" name="add_user" id="add_user" />
+			<button id ="shake" type="button">Earth Quake!</button>
+		</div>
+	</div>
 <script>
+$(document).ready(function() {
+	$('far-clouds').pan({fps: 30, speed: 0.7, dir: 'left'});
+	$('near-clouds').pan({fps: 30, speed: 1, dir: 'left'});
+});
 $('#shake').click(function() {
 	$('body').effect("shake");
 });
