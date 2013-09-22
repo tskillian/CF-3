@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="en">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<head>
+	<title>Manage Users</title>
+</head>
+<body>
 <h1>Current Users</h1>
 <ul>
 	{% for user in object_list %}
@@ -14,3 +22,5 @@ $(document).click(function() {
 	$('ul li').toggle("explode");
 });
 </script>
+</body>
+</html>
