@@ -7,6 +7,33 @@
 
 <head>
 	<link re1="stylesheet" type="text/css" href="/static/styles.css">
+	<style type="text/css">
+        body {
+            background: #aedfe5 url(img/sky.png) 0 0 repeat-x;
+        }
+        .stage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-width: 900px;
+            height: 100%;
+            overflow: hidden;
+            z-index: 100;
+        }
+        .far-clouds {
+            background: transparent url(img/far-clouds.png) 305px 102px repeat-x;
+        }
+        .near-clouds {
+            background: transparent url(img/near-clouds.png) 305px 162px repeat-x;
+        }
+        .mainContent{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 101;    
+        }
+    </style>
 	<title>Manage Users</title>
 </head>
 <body>
@@ -29,6 +56,7 @@
 			<button id ="shake" type="button">Earth Quake!</button>
 		</div>
 	</div>
+</body>
 <script>
 $(document).ready(function() {
 	$('far-clouds').pan({fps: 30, speed: 0.7, dir: 'left'});
@@ -38,5 +66,4 @@ $('#shake').click(function() {
 	$('body').effect("shake");
 });
 </script>
-</body>
 </html>
