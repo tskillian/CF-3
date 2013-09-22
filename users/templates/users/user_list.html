@@ -16,6 +16,9 @@
 	{% endfor %}
 </ul>
 
+<form action="{% url "user_new" %}" method="get">
+	<input type="submit" value="Add User" name="add_user" id="add_user" />
+
 <a href="{% url "user_new" %}">Add User</a>
 <button id ="shake" type="button">Earth Quake!</button>
 <script>
